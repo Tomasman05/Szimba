@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { BaseService } from 'src/app/services/base.service';
 
 @Component({
@@ -12,11 +12,10 @@ allat:any={}
 lakohelyek:any
 gondozok:any
 
-constructor(private base:BaseService, private router:Router){
-
-  // this.base.getData('allatok').subscribe(
-  //   (adatok)=>this.allatok=adatok
-  // )
+constructor(private base:BaseService, private router:Router,private route:ActivatedRoute){
+  this.route.paramMap.subscribe(
+    (p:any)=>console.log(p.params.id)
+  )
 
   this.base.getData('lakhelyek').subscribe(
     (adatok)=>this.lakohelyek=adatok

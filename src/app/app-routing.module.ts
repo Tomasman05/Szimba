@@ -7,6 +7,7 @@ import { UjlakoComponent } from './part/ujlako/ujlako.component';
 const routes: Routes = [
   {path: 'allataink' , component:AllatainkComponent},
   {path: 'ujlako' , component:UjlakoComponent},
+  {path: 'ujlako/:id' , component:UjlakoComponent},
   {path: 'rolunk' , component:RolunkComponent},
   {path: ' ' , redirectTo:'rolunk'},
   {path: '**' , redirectTo:'rolunk'},

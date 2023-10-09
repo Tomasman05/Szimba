@@ -13,6 +13,12 @@ export class BaseService {
     return this.http.get(this.url+target)
   }
   newAnimal(body:any){
-    return this.http.post(this.url+'allatok',body)
+    return this.http.post(this.url+'allatok/',body)
+  }
+  deleteAnimal(id:any){
+    return this.http.delete(this.url+"allatok/"+id)
+  }
+  modifyAnimal(id:any){
+    
   }
 }
