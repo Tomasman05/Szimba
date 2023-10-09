@@ -8,7 +8,7 @@ import { BaseService } from 'src/app/services/base.service';
   styleUrls: ['./allataink.component.css']
 })
 export class AllatainkComponent {
-
+  szo = ""
   allatok: any
   lakohelyek: any
   gondozok: any
@@ -35,7 +35,9 @@ export class AllatainkComponent {
   }
 
   keresElnevezes(mit: string, idhely: number, idgondozo: number): string {
-    console.log(mit)
+    if(!this.lakohelyek || !this.gondozok || !this.allatok){
+      return ""
+    }
     if (mit == 'helye') {
       let id = idhely
       return this.lakohelyek.find(

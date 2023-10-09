@@ -11,6 +11,7 @@ import { RolunkComponent } from './part/rolunk/rolunk.component';
 import { AllatainkComponent } from './part/allataink/allataink.component';
 import { UjlakoComponent } from './part/ujlako/ujlako.component';
 import { NavComponent } from './part/nav/nav.component';
+import { FilterPipe } from './filter.pipe';
 
 
 
@@ -20,7 +21,8 @@ import { NavComponent } from './part/nav/nav.component';
     RolunkComponent,
     AllatainkComponent,
     UjlakoComponent,
-    NavComponent
+    NavComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,

@@ -1,7 +1,9 @@
-<!-- {{allatok|json}} -->
 
 <h1 class="display-1 my-5">Az állatkert lakói</h1>
-
+<div class="form-floating mb-3">
+    <input [(ngModel)]="szo" type="text" class="form-control" id="keres">
+    <label for="keres">Keresés:</label>
+</div>
 <div class="row my-3">
     <div *ngFor="let oszlop of oszlopok" class="col fw-bold">
         {{oszlop['text']}}
@@ -9,7 +11,7 @@
     <div class="col fw-bold">Műveletek</div>
 </div>
 
-<div *ngFor="let allat of allatok" class="row my-2">
+<div *ngFor="let allat of allatok|filter:szo" class="row my-2">
     <div *ngFor="let oszlop of oszlopok" class="col ">
 
         <ng-container *ngIf="oszlop.key=='gondozo'|| oszlop.key=='helye';else nemlakhely">
