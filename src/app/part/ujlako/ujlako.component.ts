@@ -14,7 +14,14 @@ gondozok:any
 
 constructor(private base:BaseService, private router:Router,private route:ActivatedRoute){
   this.route.paramMap.subscribe(
-    (p:any)=>console.log(p.params.id)
+    (p:any)=>{
+      let id = p.params.id
+      if(id){
+        this.base.getAnimal(id).subscribe(
+          (allat)=>this.allat=allat
+        )
+      }
+    }
   )
 
   this.base.getData('lakhelyek').subscribe(
